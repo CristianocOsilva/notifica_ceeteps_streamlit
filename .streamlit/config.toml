@@ -1,0 +1,17 @@
+# config.toml
+
+[general]
+email = "cristianocezar.logistica@gmail.com"
+# O email é usado apenas para receber notificações da Streamlit.
+
+[server]
+port = 8501
+# Escolha a porta na qual o aplicativo será executado.
+
+[theme]
+primaryColor = "#3498db"
+backgroundColor = "#f2f2f2"
+
+[client]
+title = "Dashboard Notifica"
+favicon = "caminho/para/icone.png"
