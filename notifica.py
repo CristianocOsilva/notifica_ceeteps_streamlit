@@ -60,7 +60,7 @@ plt.axhline(y=media_vagas, color='r', linestyle='--', label=f'Média ({media_vag
 plt.xlabel('Cidade')
 plt.ylabel('Vagas Oferecidas')
 plt.title('Gráfico de Barras - Vagas Oferecidas por Cidade')
-plt.xticks(rotation=45)  # Rotaciona os rótulos do eixo x para melhor legibilidade
+plt.xticks(rotation=90)  # Rotaciona os rótulos do eixo x para melhor legibilidade
 col1.pyplot(fig_cidades)
 
 # Gráfico de Barras das Disciplinas
