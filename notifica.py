@@ -16,7 +16,7 @@ df = pd.read_excel('data_etecs.xlsx', usecols=["CIDADE", "UNIDADE", "COMPONENTE 
 
 # Exibição de KPIs
 st.info('Total Cidades', icon="📌")
-st.metric("VAGAS POR CIDADES", df1["CIDADE"].count())
+st.metric("TOTAL DE VAGAS: QUANTIDADE DE EDITAIS PUBLICADOS", df1["CIDADE"].count())
 
 # Lista dos Aprovados Excel
 with st.expander("⏰ Lista das Vagas Excel"):
