@@ -48,8 +48,18 @@ df_componente_curricular.columns = ['COMPONENTE CURRICULAR', 'Contador']
 df_componente_curricular = df_componente_curricular.sort_values(by='Contador', ascending=False)
 df_componente_curricular =df_componente_curricular.head(15)
 
+# Calculo da contagem total de matérias para cada cidade
+dados_agrupados['Total'] = dados_agrupados.sum(axis=1)
+
+# Ordenação das cidades com base na contagem total em ordem decrescente
+cidades_mais_materias = dados_agrupados.sort_values(by='Total', ascending=False)
+
+# Filtro das cidades com as maiores contagens
+cidades_com_mais_materias = cidades_mais_materias.head(15)
+
+
 # Crie duas colunas, uma para cada gráfico
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 # Título do Dashboard
 st.title("Dashboard de Análise de Dados")
@@ -68,24 +78,23 @@ col1.pyplot(fig_cidades)
 # Gráfico de Barras das Disciplinas
 col2.subheader("Top 15 Disciplinas Mais Ofertadas")
 fig_disciplinas = plt.figure()
-plt.scatter(df_componente_curricular['COMPONENTE CURRICULAR'], df_componente_curricular['Contador'])
-plt.xlabel('COMPONENTE CURRICULAR')
-plt.ylabel('Número de Vagas')
-plt.title('Distribuição de Vagas por Componente Curricular')
-plt.xticks(rotation=90)  # Rotaciona os rótulos do eixo x para melhor legibilidade
+x = dados_agrupados.index
+y = dados_agrupados.sum(axis=1)
+plt.scatter(x, y)
+plt.title('Contagem de Disciplinas Ofertadas por Cidade')
+plt.xlabel('Cidade')
+plt.ylabel('Número de matérias')
+plt.xticks(rotation=90)  # Rotação dos rótulos no eixo x para melhor legibilidade
 col2.pyplot(fig_disciplinas)
 
-    
-# Carregue suas imagens
-imagem1 = 'grafico.png'
-imagem2 = 'mapa.png'
-
-# Crie duas colunas para as imagens
-col1, col2 = st.columns(2)
-
-# Adicione as imagens às colunas
-col1.image(imagem1, caption='gráfico: as 15 + por ofertas de vagas', use_column_width=True)
-col2.image(imagem2, caption='Mapa: cidades com mais editais abertos', use_column_width=True)
+# Criação de gráfico de barras empilhadas para as 15 principais cidades
+col3.subheader("15 + cidades com editais abertos")
+fig_mais = plt.figure()
+cidades_com_mais_materias.plot(kind='bar', stacked=True, legend=False)
+plt.title('Contagem de Disciplinas Ofertadas por Cidade')
+plt.xlabel('Cidade')
+plt.ylabel('Número de materias')
+col3.pyplot(fig_mais)
 
 # Observações e Resultados
 st.subheader("Observações e Resultados")
