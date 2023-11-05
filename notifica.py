@@ -1,8 +1,5 @@
 import streamlit as st
 import pandas as pd
-import folium
-from geopy.geocoders import Nominatim
-from geopy.extra.rate_limiter import RateLimiter
 import matplotlib.pyplot as plt
 
 # Configuração da página
