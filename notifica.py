@@ -1,18 +1,23 @@
 import streamlit as st
 import pandas as pd
+import folium
+from geopy.geocoders import Nominatim
+from geopy.extra.rate_limiter import RateLimiter
 import matplotlib.pyplot as plt
 
 # Configuração da página
 st.set_page_config(page_title="Dashboard", layout="wide", initial_sidebar_state="expanded")
 
 # Carregando o arquivo Excel
-xls = pd.ExcelFile('data_etecs.xlsx')
+xls = pd.ExcelFile('VagasEtecs.xlsx')
 
 # Lendo cada aba (sheet) em um DataFrame
 df1 = pd.read_excel(xls, 'Vagas')
 # Carregando os dados desejados do arquivo Excel
-df = pd.read_excel('data_etecs.xlsx', usecols=["CIDADE", "UNIDADE", "COMPONENTE CURRICULAR"])
+df = pd.read_excel('VagasEtecs.xlsx', usecols=["CIDADE", "UNIDADE", "COMPONENTE CURRICULAR", "MATERIA"])
 #df2 = pd.read_excel(xls, 'Cidades')
+# Agrupe os dados por cidade e disciplina e conte o número de disciplinas em cada cidade
+dados_agrupados = df.groupby(['CIDADE', 'MATERIA']).size().unstack().fillna(0)
 
 # Exibição de KPIs
 st.info('Total Cidades', icon="📌")
@@ -53,28 +58,38 @@ col1, col2 = st.columns(2)
 st.title("Dashboard de Análise de Dados")
 
 # Gráfico de Barras das Cidades
-col1.subheader("Distribuição de Vagas por Cidade")
+col1.subheader("Distribuição de disciplinas - processo simplificado")
 fig_cidades = plt.figure()
-plt.bar(df2['CIDADE'], df2['Contagem'])
+plt.bar(df2.head(15)['CIDADE'], df2.head(15)['Contagem'])
 plt.axhline(y=media_vagas, color='r', linestyle='--', label=f'Média ({media_vagas:.2f})')
 plt.xlabel('Cidade')
 plt.ylabel('Vagas Oferecidas')
-plt.title('Gráfico de Barras - Vagas Oferecidas por Cidade')
+plt.title('disciplinas ofertadas e Linha Média')
 plt.xticks(rotation=90)  # Rotaciona os rótulos do eixo x para melhor legibilidade
 col1.pyplot(fig_cidades)
 
 # Gráfico de Barras das Disciplinas
 col2.subheader("Top 15 Disciplinas Mais Ofertadas")
 fig_disciplinas = plt.figure()
-plt.bar(df_componente_curricular['COMPONENTE CURRICULAR'], df_componente_curricular['Contador'])
+plt.scatter(df_componente_curricular['COMPONENTE CURRICULAR'], df_componente_curricular['Contador'])
 plt.xlabel('COMPONENTE CURRICULAR')
 plt.ylabel('Número de Vagas')
 plt.title('Distribuição de Vagas por Componente Curricular')
 plt.xticks(rotation=90)  # Rotaciona os rótulos do eixo x para melhor legibilidade
-plt.gca().invert_yaxis()
 col2.pyplot(fig_disciplinas)
 
-# Layout dos gráficos lado a lado
+    
+# Carregue suas imagens
+imagem1 = 'grafico.png'
+imagem2 = 'mapa.png'
+
+# Crie duas colunas para as imagens
+col1, col2 = st.columns(2)
+
+# Adicione as imagens às colunas
+col1.image(imagem1, caption='gráfico: as 15 + por ofertas de vagas', use_column_width=True)
+col2.image(imagem2, caption='Mapa: cidades com mais editais abertos', use_column_width=True)
+
 # Observações e Resultados
 st.subheader("Observações e Resultados")
 st.write("""
