@@ -1,0 +1,95 @@
+{
+  "54e5d020-e1a2-44fe-bc07-18b08a2d296b": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://alunounivespbr.sharepoint.com/sites/TCC530-SALA-006GRUPO-004": {
+        "dataSources": {
+          "USUARIOS": {
+            "tableName": "6f47af32-c20e-4f27-aa10-0b6d1db39cf8"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "USUARIOS"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "54e5d020-e1a2-44fe-bc07-18b08a2d296b"
+  },
+  "b653618f-e6a9-496d-a666-48c3656d4c3a": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Excel Online (Business)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1658/1.0.1658.3452/excelonlinebusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "groups%252F37293675-9409-4269-bedd-046150713f54,b%25217j0-_a4gy0C3WPkQtqQHqHUEtjbV6GFLr__HSMew6xxAqxUCPaZpSZbTTvL_wHSP,01CRFJ3DGHVQ7XRZDU45EY2YVFOCQ5UAI6": {
+        "dataSources": {
+          "Vagas6": {
+            "tableName": "{1D285159-38AB-49DC-868F-3E79D08C1918}"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Vagas6"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "b653618f-e6a9-496d-a666-48c3656d4c3a"
+  },
+  "eb1e05f8-571a-46fe-9d6b-875688489556": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Excel Online (Business)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1658/1.0.1658.3452/excelonlinebusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "groups%252F37293675-9409-4269-bedd-046150713f54,b%25217j0-_a4gy0C3WPkQtqQHqHUEtjbV6GFLr__HSMew6xxAqxUCPaZpSZbTTvL_wHSP,01CRFJ3DGHVQ7XRZDU45EY2YVFOCQ5UAI6": {
+        "dataSources": {
+          "Cidades": {
+            "tableName": "{71F704C4-33BD-4F9A-B57D-074BF8CF821E}"
+          },
+          "Escolas": {
+            "tableName": "{B0CD32C3-944E-4CFA-BFB2-CF21B05BAF90}"
+          },
+          "Materia": {
+            "tableName": "{5EB12F72-D9E5-4846-A636-0BC9640680E7}"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Escolas",
+      "Cidades",
+      "Materia"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "eb1e05f8-571a-46fe-9d6b-875688489556"
+  }
+}

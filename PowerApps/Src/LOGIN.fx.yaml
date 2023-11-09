@@ -1,0 +1,205 @@
+LOGIN As screen:
+    Fill: =RGBA(164, 38, 44, 1)
+    LoadingSpinnerColor: =RGBA(164, 38, 44, 1)
+    OnVisible: =Set(LoginVariavel," ")
+
+    "'E-mail_login' As text":
+        Align: =Align.Center
+        BorderColor: =RGBA(238, 204, 204, 1)
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Height: =52
+        HintText: ="Usuário"
+        HoverBorderColor: =RGBA(238, 204, 204, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        Size: =20
+        Width: =356
+        X: =488
+        Y: =208
+        ZIndex: =1
+
+    Senha_login As text:
+        Align: =Align.Center
+        BorderColor: =RGBA(238, 204, 204, 1)
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Height: =52
+        HintText: ="Senha"
+        HoverBorderColor: =RGBA(248, 240, 241, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        Mode: =TextMode.Password
+        Size: =20
+        Width: =356
+        X: =488
+        Y: =283
+        ZIndex: =2
+
+    ENTRAR As button:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Semibold
+        Height: =48
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(238, 204, 204, 1)
+        OnSelect: |-
+            =If(
+                !IsBlank(
+                    LookUp(
+                        USUARIOS, 
+                        'E-mail' = 'E-mail_login'.Text And Senha = Senha_login.Text
+                    )
+                ),
+                Navigate(Filtros_Notificações,ScreenTransition.Fade);   
+                UpdateContext({LoginVariavel: 'E-mail_login'.Text});
+                UpdateContext({MostrarMensagem: false}),
+            
+                UpdateContext({MostrarMensagem: true});
+                UpdateContext({LoginVariavel:" " });
+                Reset('E-mail_login');
+                Reset(Senha_login)
+            )
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =20
+        Text: ="Entrar"
+        Width: =261
+        X: =535
+        Y: =385
+        ZIndex: =3
+
+    Esqueci As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Semibold
+        Height: =45
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(238, 204, 204, 1)
+        OnSelect: =Navigate(Esqueci_Senha,ScreenTransition.Fade)
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =15
+        Text: ="Esqueci minha senha"
+        Width: =233
+        X: =549
+        Y: =451
+        ZIndex: =4
+
+    Cadastro As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Semibold
+        Height: =45
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(238, 204, 204, 1)
+        OnSelect: =Navigate('Cadastre-se')
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =15
+        Text: ="Cadastre-se"
+        Width: =233
+        X: =549
+        Y: =510
+        ZIndex: =5
+
+    Rectangle2 As rectangle:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =69
+        Width: =1366
+        ZIndex: =6
+
+    Button3 As button:
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =122
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(164, 38, 44, 1), -20%)
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =15
+        Text: =""
+        Width: =1366
+        Y: =29
+        ZIndex: =7
+
+    Notifica_Ceeteps As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(184, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Height: =87
+        Size: =40
+        Text: ="Notifica Ceeteps"
+        Width: =608
+        X: =350
+        Y: =32
+        ZIndex: =8
+
+    Image2 As image:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =151
+        Image: ='cps-logo-identidade'
+        Width: =226
+        X: =1071
+        ZIndex: =9
+
+    login_incorreto As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =15
+        Text: ="Login incorreto! "
+        Visible: =MostrarMensagem
+        Width: =188
+        X: =608
+        Y: =111
+        ZIndex: =10
+
+    Label4 As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Size: =13
+        Text: =LoginVariavel
+        X: =921
+        Y: =97
+        ZIndex: =11
+

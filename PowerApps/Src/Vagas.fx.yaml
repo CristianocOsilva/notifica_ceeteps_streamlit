@@ -1,0 +1,314 @@
+Vagas As screen:
+    Fill: =RGBA(234, 234, 234, 1)
+    LoadingSpinnerColor: =RGBA(164, 38, 44, 1)
+
+    Rectangle1_1 As rectangle:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Fill: =RGBA(164, 38, 44, 1)
+        Height: =56
+        Width: =1366
+        ZIndex: =1
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+        BorderColor: =RGBA(89, 0, 0, 1)
+        DelayItemLoading: =true
+        Height: =620
+        Items: =Vagas6
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =116
+        X: =23
+        Y: =116
+        ZIndex: =1
+
+        Title2 As label:
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Materia: "&ThisItem.'COMPONENTE CURRICULAR'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 86
+            X: =16
+            Y: =(Parent.TemplateHeight - (Self.Size*1.8 + Subtitle2.Size*1.8 + 2 + Body1.Size*1.8)) / 2
+            ZIndex: =1
+
+        Subtitle2 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Cidade: "&ThisItem.CIDADE
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title2.Width
+            X: =Title2.X
+            Y: =Title2.Y + Title2.Height
+            ZIndex: =2
+
+        Body1 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Unidade: "&ThisItem.UNIDADE
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title2.Width
+            X: =Title2.X
+            Y: =Subtitle2.Y + Subtitle2.Height
+            ZIndex: =3
+
+        NextArrow2 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(166, 166, 166, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="Exibir detalhes do item"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator2 As rectangle:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Fill: =RGBA(184, 0, 0, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle4 As rectangle:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Fill: =RGBA(89, 0, 0, 1)
+            Height: =Parent.TemplateHeight - Separator2.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+    Button1_1 As button:
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(164, 38, 44, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =91
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(164, 38, 44, 1), -20%)
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =15
+        Text: =""
+        Width: =1366
+        Y: =11
+        ZIndex: =2
+
+    Icon1_1 As icon.ChevronLeft:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(LOGIN)
+        X: =23
+        Y: =24
+        ZIndex: =5
+
+    Label2_1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =53
+        Size: =30
+        Text: ="Vagas"
+        Width: =437
+        X: =464
+        Y: =24
+        ZIndex: =6
+
+    Button4 As button:
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(164, 38, 44, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =620
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(164, 38, 44, 1), -20%)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =15
+        Text: =""
+        Width: =630
+        X: =700
+        Y: =116
+        ZIndex: =7
+
+    Label3 As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =98
+        Size: =16
+        Text: =Gallery1.Selected.'COMPONENTE CURRICULAR'
+        Width: =560
+        X: =735
+        Y: =153
+        ZIndex: =8
+
+    Label3_1 As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =98
+        Size: =16
+        Text: =Gallery1.Selected.UNIDADE
+        Width: =560
+        X: =735
+        Y: =251
+        ZIndex: =9
+
+    Label3_2 As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =98
+        Size: =16
+        Text: =Gallery1.Selected.CIDADE
+        Width: =560
+        X: =735
+        Y: =349
+        ZIndex: =10
+
+    Label3_3 As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =98
+        Size: =16
+        Text: =Gallery1.Selected.'DT, INÍCIO INSCRIÇÃO'
+        Width: =560
+        X: =735
+        Y: =447
+        ZIndex: =11
+
+    Label3_4 As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =98
+        Size: =16
+        Text: =Gallery1.Selected.'DT. FIM INSCRIÇÃO'
+        Width: =560
+        X: =735
+        Y: =545
+        ZIndex: =12
+
+    Label3_5 As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =98
+        Size: =22
+        Text: ="Matéria"
+        Width: =560
+        X: =735
+        Y: =116
+        ZIndex: =13
+
+    Label3_6 As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =98
+        Size: =22
+        Text: ="ETEC"
+        Width: =560
+        X: =735
+        Y: =218
+        ZIndex: =14
+
+    Label3_7 As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =98
+        Size: =22
+        Text: ="CIDADE"
+        Width: =560
+        X: =735
+        Y: =316
+        ZIndex: =15
+
+    Label3_8 As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =98
+        Size: =22
+        Text: ="Inicio das inscrições"
+        Width: =560
+        X: =735
+        Y: =414
+        ZIndex: =16
+
+    Label3_9 As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =98
+        Size: =22
+        Text: ="Fim das inscrições"
+        Width: =560
+        X: =735
+        Y: =512
+        ZIndex: =17
+

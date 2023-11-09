@@ -1,0 +1,410 @@
+Filtros_Notificações As screen:
+    Fill: =RGBA(234, 234, 234, 1)
+    LoadingSpinnerColor: =RGBA(164, 38, 44, 1)
+
+    Button4_3 As button:
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(164, 38, 44, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =300
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(164, 38, 44, 1), -20%)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =15
+        Text: =""
+        Width: =532
+        X: =43
+        Y: =436
+        ZIndex: =1
+
+    Button4_2 As button:
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(164, 38, 44, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =300
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(164, 38, 44, 1), -20%)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =15
+        Text: =""
+        Width: =530
+        X: =45
+        Y: =114
+        ZIndex: =2
+
+    Rectangle1_2 As rectangle:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Fill: =RGBA(164, 38, 44, 1)
+        Height: =56
+        Width: =1366
+        ZIndex: =3
+
+    Button1_2 As button:
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(164, 38, 44, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =91
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(164, 38, 44, 1), -20%)
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =15
+        Text: =""
+        Width: =1366
+        Y: =11
+        ZIndex: =4
+
+    Icon1_2 As icon.ChevronLeft:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(LOGIN)
+        X: =23
+        Y: =24
+        ZIndex: =5
+
+    Label2_2 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =64
+        Size: =20
+        Text: ="Olá Paulo Henrique Reis da Silva, crie ou atualize o seu filtro"
+        Width: =911
+        X: =212
+        Y: =24
+        ZIndex: =6
+
+    Button4_1 As button:
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(164, 38, 44, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =620
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(164, 38, 44, 1), -20%)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =15
+        Text: =""
+        Width: =726
+        X: =603
+        Y: =116
+        ZIndex: =7
+
+    ListBox1 As listbox:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledSelectionColor: =RGBA(244, 244, 244, 1)
+        DisabledSelectionFill: =RGBA(166, 166, 166, 1)
+        Height: =169
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(222, 179, 184, 1)
+        Items: =Filter(Materia, StartsWith(DISCIPLINA, TextInput2.Text))
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(164, 38, 44, 1)
+        SelectionFill: =RGBA(200, 125, 128, 1)
+        Size: =10
+        Width: =466
+        X: =78
+        Y: =212
+        ZIndex: =17
+
+    TextInput2 As text:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Height: =42
+        HintText: ="Insira a matéria que quer filtrar"
+        HoverBorderColor: =RGBA(89, 0, 0, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(222, 179, 184, 1)
+        Size: =13
+        Width: =466
+        X: =78
+        Y: =153
+        ZIndex: =18
+
+    Icon2 As icon.Search:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =43
+        Icon: =Icon.Search
+        Width: =32
+        X: =512
+        Y: =153
+        ZIndex: =19
+
+    ListBox1_1 As listbox:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledSelectionColor: =RGBA(244, 244, 244, 1)
+        DisabledSelectionFill: =RGBA(166, 166, 166, 1)
+        Height: =181
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(222, 179, 184, 1)
+        Items: =Filter(Cidades, StartsWith(CIDADE, TextInput2_1.Text))
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(89, 0, 0, 1)
+        SelectionFill: =RGBA(200, 125, 128, 1)
+        Size: =10
+        Width: =466
+        X: =78
+        Y: =531
+        ZIndex: =20
+
+    Label2_3 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =53
+        Size: =20
+        Text: ="Componente Curricular"
+        Width: =437
+        X: =128
+        Y: =107
+        ZIndex: =21
+
+    TextInput2_1 As text:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Height: =41
+        HintText: ="Insira a cidade que quer filtrar"
+        HoverBorderColor: =RGBA(89, 0, 0, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(222, 179, 184, 1)
+        Size: =13
+        Width: =465
+        X: =79
+        Y: =477
+        ZIndex: =22
+
+    Label2_4 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =53
+        Size: =20
+        Text: ="Cidade"
+        Width: =437
+        X: =107
+        Y: =431
+        ZIndex: =23
+
+    Label1 As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Height: =115
+        Size: =13
+        Text: =ListBox1.SelectedItemsText
+        Width: =516
+        X: =740
+        Y: =212
+        ZIndex: =24
+
+    DataTable1 As dataTable.datatable:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderStyle: =BorderStyle.Solid
+        BorderThickness: =1
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Open Sans'
+        FontWeight: =FontWeight.Normal
+        HeadingColor: =RGBA(255, 255, 255, 1)
+        HeadingFill: =RGBA(164, 38, 44, 1)
+        HeadingFont: =Font.'Open Sans'
+        HeadingFontWeight: =FontWeight.Bold
+        HeadingSize: =15
+        Height: =206
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(222, 179, 184, .2)
+        InputFill: =RGBA(255, 255, 255, 1)
+        InvertedColor: =RGBA(255, 255, 255, 1)
+        Items: =USUARIOS
+        LinkColor: =RGBA(0, 134, 208, 1)
+        PrimaryColor1: =RGBA(164, 38, 44, 1)
+        PrimaryColor2: =RGBA(89, 0, 0, 1)
+        PrimaryColor3: =RGBA(222, 179, 184, 1)
+        SelectedColor: =RGBA(255, 255, 255, 1)
+        SelectedFill: =RGBA(164, 38, 44, .2)
+        Size: =13
+        Width: =678
+        X: =630
+        Y: =189
+        ZIndex: =25
+
+        Matéria_Column1 As dataTableColumn.textualColumn:
+            AutoWidth: =false
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Componente Curricular"
+            FieldName: ="Mat_x00e9_ria"
+            FieldVariantName: ="textualColumn"
+            Height: =218
+            LayoutHeight: =Parent.Height
+            Order: =7
+            Text: =Concat(ThisItem.Matéria,Value,", ")
+            Width: =667
+            X: =11
+            Y: =0
+            ZIndex: =7
+
+    Icon2_1 As icon.Search:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =43
+        Icon: =Icon.Search
+        Width: =32
+        X: =512
+        Y: =475
+        ZIndex: =26
+
+    DataTable1_1 As dataTable.datatable:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderStyle: =BorderStyle.Solid
+        BorderThickness: =1
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Open Sans'
+        FontWeight: =FontWeight.Normal
+        HeadingColor: =RGBA(255, 255, 255, 1)
+        HeadingFill: =RGBA(164, 38, 44, 1)
+        HeadingFont: =Font.'Open Sans'
+        HeadingFontWeight: =FontWeight.Bold
+        HeadingSize: =15
+        Height: =206
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(222, 179, 184, .2)
+        InputFill: =RGBA(255, 255, 255, 1)
+        InvertedColor: =RGBA(255, 255, 255, 1)
+        Items: =USUARIOS
+        LinkColor: =RGBA(0, 134, 208, 1)
+        PrimaryColor1: =RGBA(164, 38, 44, 1)
+        PrimaryColor2: =RGBA(89, 0, 0, 1)
+        PrimaryColor3: =RGBA(222, 179, 184, 1)
+        SelectedColor: =RGBA(255, 255, 255, 1)
+        SelectedFill: =RGBA(164, 38, 44, .2)
+        Size: =13
+        Width: =678
+        X: =627
+        Y: =431
+        ZIndex: =27
+
+        Cidade_Column2 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Cidade"
+            FieldName: ="Cidade"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =8
+            Text: =Concat(ThisItem.Cidade,Value,", ")
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =8
+
+    Button5 As button:
+        Color: =RGBA(184, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(164, 38, 44, 1), -20%)
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =15
+        Text: ="Atualizar Filtro"
+        Width: =294
+        X: =663
+        Y: =654
+        ZIndex: =28
+
+    Label2_5 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =53
+        Size: =25
+        Text: ="Filtro atual"
+        Width: =437
+        X: =725
+        Y: =123
+        ZIndex: =29
+
+    Button5_1 As button:
+        Color: =RGBA(184, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(164, 38, 44, 1), -20%)
+        OnSelect: =Navigate(Vagas,ScreenTransition.Fade)
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =15
+        Text: ="Vagas"
+        Width: =294
+        X: =983
+        Y: =654
+        ZIndex: =30
+
